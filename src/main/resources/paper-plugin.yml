@@ -1,0 +1,11 @@
+name: FusionEngine
+version: '${version}'
+
+main: de.itsgraphax.fusion.engine.FusionEngine
+bootstrapper: de.itsgraphax.fusion.engine.FusionEngineBootstrap
+api-version: '26.2'
+load: STARTUP
+
+authors: [ ItsGraphax, TheDuckFan ]
+website: https://itsgraphax.de
+description: "Game Engine and commons for Fusion"
