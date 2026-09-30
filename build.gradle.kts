@@ -12,7 +12,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.2.build.+")
 
-    implementation("de.itsgraphax:GrphxLib:4.1.4")
+    implementation("de.itsgraphax:GrphxLib:5.1.0")
 }
 
 java {

@@ -27,7 +27,7 @@ public final class FusionEngine extends JavaPlugin {
     @Override
     public void onEnable() {
         OnEnable.registerEvents(this,
-                new ResourcepackSender("fusion", UUID.fromString("3dc528f6-bfbc-43f7-950c-1dff774fc60d")));
+                new ResourcepackSender("fusion", "1.0.0"));
 
         // OnEnable.registerEvents(Set.of(new Test()), this);
         // getServer().getScheduler().runTaskTimer(this, Test::tick, 5, 5);
