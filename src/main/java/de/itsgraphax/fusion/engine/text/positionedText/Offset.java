@@ -8,6 +8,7 @@ import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Map;
 
+@Deprecated(forRemoval = true)
 public final class Offset {
     public static int getOffset(char c) {
         return OffsetFontOptions.options.get(c);

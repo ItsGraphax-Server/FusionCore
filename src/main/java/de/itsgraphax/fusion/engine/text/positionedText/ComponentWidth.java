@@ -9,6 +9,10 @@ import net.kyori.adventure.text.TextComponent;
 import java.util.Collection;
 import java.util.Set;
 
+/**
+ * @deprecated Use tinsel instead
+ */
+@Deprecated(forRemoval = true)
 public class ComponentWidth {
     /**
      * Currently implemented: ASCII chars defined in minecraft:default until (non inclusive) £
