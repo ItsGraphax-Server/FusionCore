@@ -43,11 +43,12 @@ public final class SessionItems {
     public void setItem(int rawSlotId, GuiItem item) {
         verifySlotId(rawSlotId, slotAmount);
         items.set(rawSlotId, item);
+        gui.
     }
 
     public void setTopItem(int slotId, GuiItem item) {
         verifySlotId(slotId, gui.getSize());
-        items.set(slotId, item);
+        setItem(slotId, item);
     }
 
     /**
@@ -59,7 +60,7 @@ public final class SessionItems {
     public void setInventoryItem(@Range(from = 0, to = 35) int slotId, GuiItem item) {
         if (!gui.usesPlayerInventory()) throw new RuntimeException("The gui dosen't use the player inventory");
         verifySlotId(slotId, 9 * 4);
-        items.set(gui.getSize() + slotId, item);
+        setItem(gui.getSize() + slotId, item);
     }
 
     /**
@@ -71,7 +72,7 @@ public final class SessionItems {
     public void setHotbarItem(@Range(from = 0, to = 8) int slotId, GuiItem item) {
         if (!gui.usesPlayerInventory()) throw new RuntimeException("The gui dosen't use the player inventory");
         verifySlotId(slotId, 9);
-        items.set(gui.getSize() + 9 * 3 + slotId, item);
+        setItem(gui.getSize() + 9 * 3 + slotId, item);
     }
 
 

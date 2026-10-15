@@ -30,6 +30,7 @@ public final class GuiSession {
         return view;
     }
 
+
     public Gui getGui() {
         return gui;
     }
@@ -49,6 +50,7 @@ public final class GuiSession {
     public @Nullable InventorySnapshot getSnapshot() {
         return snapshot;
     }
+
 
     public void fullRender() {
         for (int slot = 0; slot < items.getSize(); slot++) {
