@@ -21,7 +21,7 @@ public final class GuiSession {
     }
 
     public void init() {
-        gui.onFirstRender(items);
+        gui.onFirstRender(this);
         fullRender();
     }
 

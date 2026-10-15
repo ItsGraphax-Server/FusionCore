@@ -1,7 +1,6 @@
 package de.itsgraphax.fusion.engine.gui;
 
 import de.itsgraphax.fusion.engine.gui.session.GuiSession;
-import de.itsgraphax.fusion.engine.gui.session.SessionItems;
 import net.kyori.adventure.text.Component;
 import org.jetbrains.annotations.NotNull;
 
@@ -51,9 +50,10 @@ public abstract class Gui {
     /**
      * Gets called when the gui gets first rendered on open.
      *
-     * @param items A {@link SessionItems} with the items in the player gui.
+     * @param session A {@link GuiSession}.
      */
-    public void onFirstRender(SessionItems items) {}
+    public void onFirstRender(GuiSession session) {
+    }
 
     /**
      * Gets called when the gui gets closed by a player.
@@ -61,5 +61,6 @@ public abstract class Gui {
      *
      * @param session The current {@link GuiSession} that is being closed
      */
-    public void onClose(GuiSession session) {}
+    public void onClose(GuiSession session) {
+    }
 }
