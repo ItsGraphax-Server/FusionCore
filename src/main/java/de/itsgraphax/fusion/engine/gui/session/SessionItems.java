@@ -43,7 +43,6 @@ public final class SessionItems {
     public void setItem(int rawSlotId, GuiItem item) {
         verifySlotId(rawSlotId, slotAmount);
         items.set(rawSlotId, item);
-        gui.
     }
 
     public void setTopItem(int slotId, GuiItem item) {
