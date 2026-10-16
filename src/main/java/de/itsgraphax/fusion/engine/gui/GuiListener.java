@@ -6,6 +6,7 @@ import de.itsgraphax.fusion.engine.misc.Namespaces;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.GameRules;
+import org.bukkit.block.Barrel;
 import org.bukkit.block.Chest;
 import org.bukkit.block.DoubleChest;
 import org.bukkit.entity.Player;
@@ -60,7 +61,7 @@ public final class GuiListener implements Listener {
         Inventory inventory = event.getInventory();
         InventoryHolder holder = inventory.getHolder();
 
-        if (holder instanceof Chest || holder instanceof DoubleChest) {
+        if (holder instanceof Chest || holder instanceof DoubleChest || holder instanceof Barrel) {
             Component title = Component
                     .text(String
                             .format("\u0000%s\u0001", (char) inventory.getSize()))
