@@ -5,6 +5,7 @@ import de.itsgraphax.fusion.engine.gui.session.GuiSessionManager;
 import de.itsgraphax.fusion.engine.misc.Namespaces;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
+import org.bukkit.Bukkit;
 import org.bukkit.GameRules;
 import org.bukkit.block.Barrel;
 import org.bukkit.block.Chest;
@@ -21,6 +22,8 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.Nullable;
+
+import static de.itsgraphax.fusion.engine.FusionEngine.fusionEngine;
 
 public final class GuiListener implements Listener {
     public static final GuiSessionManager sessionManager = GuiSessionManager.getManager();
@@ -103,8 +106,8 @@ public final class GuiListener implements Listener {
                 event.getRawSlot() >= session.getGui().getSize()) return;
 
         event.setCancelled(true);
-        session.getItems().get(event.getRawSlot()).onClick(new ClickContext(session, event));
 
+        Bukkit.getScheduler().runTask(fusionEngine, () -> session.getItems().get(event.getRawSlot()).onClick(new ClickContext(session, event)));
     }
 
 
