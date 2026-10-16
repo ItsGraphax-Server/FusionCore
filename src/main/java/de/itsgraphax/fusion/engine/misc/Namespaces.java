@@ -13,6 +13,7 @@ public interface Namespaces {
 
     interface Fonts {
         NamespacedKey OFFSET = key("offset");
+        NamespacedKey VANILLA_CONTAINERS = key("vanilla_containers");
         NamespacedKey DEFAULT = key("minecraft", "default");
     }
 }

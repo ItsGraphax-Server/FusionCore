@@ -2,19 +2,23 @@ package de.itsgraphax.fusion.engine.gui;
 
 import de.itsgraphax.fusion.engine.gui.session.GuiSession;
 import de.itsgraphax.fusion.engine.gui.session.GuiSessionManager;
+import de.itsgraphax.fusion.engine.misc.Namespaces;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.GameRules;
+import org.bukkit.block.Chest;
+import org.bukkit.block.DoubleChest;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityResurrectEvent;
-import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.inventory.InventoryCloseEvent;
-import org.bukkit.event.inventory.InventoryDragEvent;
-import org.bukkit.event.inventory.InventoryEvent;
+import org.bukkit.event.inventory.*;
 import org.bukkit.event.player.PlayerAttemptPickupItemEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.Nullable;
 
 public final class GuiListener implements Listener {
@@ -48,6 +52,26 @@ public final class GuiListener implements Listener {
     @EventHandler
     void onLeave(PlayerQuitEvent event) {
         GuiSessionManager.getManager().closed(event.getPlayer());
+    }
+
+
+    @EventHandler
+    void onInventoryOpen(InventoryOpenEvent event) {
+        Inventory inventory = event.getInventory();
+        InventoryHolder holder = inventory.getHolder();
+
+        if (holder instanceof Chest || holder instanceof DoubleChest) {
+            Component title = Component
+                    .text(String
+                            .format("\u0000%s\u0001", (char) inventory.getSize()))
+                    .color(TextColor.fromHexString("#ffffff"))
+                    .font(Namespaces.Fonts.VANILLA_CONTAINERS)
+                    .append(event.getView()
+                            .title()
+                            .font(Namespaces.Fonts.DEFAULT)
+                            .color(TextColor.fromHexString("#373737")));
+            event.titleOverride(title);
+        }
     }
 
 
