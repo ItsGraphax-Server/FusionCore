@@ -1,7 +1,5 @@
 package de.itsgraphax.fusion.engine;
 
-import de.itsgraphax.fusion.engine.gui.GuiListener;
-import de.itsgraphax.fusion.engine.gui.session.GuiSessionManager;
 import de.itsgraphax.grphxLib.shorthands.OnEnable;
 import de.itsgraphax.grphxLib.utils.ResourcepackSender;
 import org.bukkit.Bukkit;
@@ -20,14 +18,8 @@ public final class FusionEngine extends JavaPlugin {
     @Override
     public void onEnable() {
         OnEnable.registerEvents(this,
-                new ResourcepackSender("fusion", "1.0.1"),
-                new GuiListener());
+                new ResourcepackSender("fusion", "1.0.1")
+        );
     }
 
-    @Override
-    public void onDisable() {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            GuiSessionManager.getManager().closed(player);
-        }
-    }
 }
