@@ -19,7 +19,7 @@ public class ComponentWidth {
      */
     private static int calculateDefaultCharWidth(char c) {
         return switch (c) {
-            case 'i', '!', '.',',' , '\'', '|', ':', ';' -> 1;
+            case 'i', '!', '.', ',', '\'', '|', ':', ';' -> 1;
 
             case 'l', '`' -> 2;
 

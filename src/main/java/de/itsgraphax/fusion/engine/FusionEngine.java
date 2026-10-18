@@ -1,9 +1,8 @@
 package de.itsgraphax.fusion.engine;
 
+import de.itsgraphax.fusion.engine.misc.ContainerBackground;
 import de.itsgraphax.grphxLib.shorthands.OnEnable;
 import de.itsgraphax.grphxLib.utils.ResourcepackSender;
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FusionEngine extends JavaPlugin {
@@ -18,7 +17,8 @@ public final class FusionEngine extends JavaPlugin {
     @Override
     public void onEnable() {
         OnEnable.registerEvents(this,
-                new ResourcepackSender("fusion", "1.0.1")
+                new ResourcepackSender("fusion", "1.0.1"),
+                new ContainerBackground()
         );
     }
 
