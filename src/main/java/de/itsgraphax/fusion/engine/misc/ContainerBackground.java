@@ -5,6 +5,7 @@ import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.block.Barrel;
 import org.bukkit.block.Chest;
 import org.bukkit.block.DoubleChest;
+import org.bukkit.block.EnderChest;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryOpenEvent;
@@ -18,7 +19,7 @@ public class ContainerBackground implements Listener {
         Inventory inventory = event.getInventory();
         InventoryHolder holder = inventory.getHolder();
 
-        if (holder instanceof Chest || holder instanceof DoubleChest || holder instanceof Barrel) {
+        if (holder instanceof Chest || holder instanceof DoubleChest || holder instanceof Barrel || holder instanceof EnderChest) {
             Component title = Component
                     .text(String
                             .format("\u0000%s\u0001", (char) inventory.getSize()))
